@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="icon" href="data:image/png;base64,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"/>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Amazon_clone</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header class="header">
+        <div class="container container-header">
+            <div class="logo-container border-white">
+                <div class="logo"></div>
+                <span class="dotin">.in</span>
+            </div>
+            <div class="nav-address border-white">
+                <p class="add-first">Delivering to Hyderabad 500090</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second">Update location</p>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <select class="search-select">
+                    <option>All</option>        
+                </select>
+               <input type="text" class="search-input" placeholder="Search Amazon_clone.in"/>
+               <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+               </div>
+            </div>
+
+            <div class="lang-container border-white">
+           <p>English</p>
+           <div class="lang-img">
+            <img src="https://media.istockphoto.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=0&k=20&c=ejlQRX4C_Mb40wz1JQcB5vKYcOKlfRtry2W6UcX6mlo="/>
+           </div>
+            </div>
+
+            <div class="login-container border-white">
+                <p>Hello ,<span> signin </span></p>
+                <p class="acc">Accounts & Lists<i class="fa-solid fa-caret-down return-caret-down"></i></p>
+            </div>
+            <div class="login-container border-white">
+                <p>Returns <br><span class="order">& Order<i class="fa-solid fa-caret-down return-caret-down"></i></span></p>               
+            </div>     
+            
+            <div class="cart-container border-white">
+                
+                <i class="fa-solid fa-cart-shopping"></i>Cart
+            </div>            
+        </div>
+    </header>
+    <!----------------------- navigation ----------------------------->
+    <nav class="nav">
+        <div class="container container-nav">
+        <ul>
+            <li class="border-white" id="open-nav-slidebar">
+                 <span >
+                    <i class="fa-solid fa-bars"></i> All
+                 </span>    
+        </li>
+            <li class="border-white"><a href="#">Fresh</a></li>
+            <li class="border-white"><a href="#">Amazon miniTV</a></li>
+            <li class="border-white"><a href="#">Sell</a></li>
+            <li class="border-white"><a href="#">Best Sellers</a></li>
+            <li class="border-white"><a href="#"> Today's Deals</a></li>
+            <li class="border-white"><a href="#">Mobiles</a></li>
+            <li class="border-white"><a href="#">Electronics</a></li>
+            <li class="border-white"><a href="#"> Customer Service</a></li>
+            <li class="border-white prime-image-hover"><a href="#" class="">Prime <i class="fa-solid fa-caret-down acc-caret-down"></i> </a>
+            <div class="prime-image">
+                <img src="https://m.media-amazon.com/images/G/31/prime/NavFlyout/TryPrime/2018/Apr/IN-Prime-PIN-TryPrime-MultiBen-Apr18-400x400._CB612889281_.jpg"/>
+            </i></div>
+            
+            </li>
+            <li class="border-white"><a href="#">New Releases</a></li>
+            <li class="border-white"><a href="#">Home & Kitchen</a></li>
+            <li class="border-white"><a href="#">Fashion</a></li>
+        </li>  
+        </ul>
+        <div class="nav-right-image-amazon-app">
+            <img src="https://m.media-amazon.com/images/G/31/IN-hq/2021/img/Mobile_Traffic_/XCM_Manual_1321458_1651511_IN_3781247_400x39_en_IN._CB655944656_.jpg"/>
+               
+        </div>
+        </div>
+    </nav>
+
+    </div>
+        <!--------------- image slider --------------->
+        <section>
+            <div class="image-container">
+                <div class="image-list " id="slider">
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Softlines_JWL_SH_GW_Assets/Dec23/Shoes/EOSS/Unrec/Onemonthly/Frame_321_pc_3000-min._CB586569571_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img15/4th/sept/unrechero/8thslot/Tws_Tallhero_3000x1200._CB596103422_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/apparelGW/decatf23/eoss/unrec/oneweekly/MA_3000._CB586386964_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/devjyoti/GW/Uber/Nov/D103625178_DesktopTallHero_3000x1200._CB574597993_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Dec_2023/3000X1200BAU_Dec._CB587127632_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Baby/cnnjpp1/Baby/D92807365-_1_Tallhero_2xx._CB598669664_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/Lawn_Garden/Ud/Dec_23/GW/GW-Hero-Pc-6._CB586809257_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Toys/HTL2023/GW/Homepage_DesktopHeroTemplate_3000x1200_Unrec._CB570906581_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Softlines_JWL_SH_GW_Assets/Dec23/Shoes/EOSS/Unrec/Onemonthly/Frame_321_pc_3000-min._CB586569571_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img15/4th/sept/unrechero/8thslot/Tws_Tallhero_3000x1200._CB596103422_.jpg" />
+                    </div>
+                    <div class="image-item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/apparelGW/decatf23/eoss/unrec/oneweekly/MA_3000._CB586386964_.jpg" />
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>    
+            <div class="image-btn-container ">
+                <button class="slider-btn" id="slide-btn-left"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn" id="slide-btn-right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <!-- products container card  -->
+            <main class="main">
+                <div class="card-product-container container">
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                </div>
+
+                <div class="card-product-container container">
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                </div>
+
+                <div class="card-product-container container">
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                </div>
+
+                <div class="card-product-container container">
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                    <div class="card-product">
+                        <h2>Revamp your home in style</h2>
+                        <div class="card-product-nested-card">
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/HF_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Cushion covers</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Decor_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Vases,decor &more</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Home_Storage_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Home storage</p>
+                            </div>
+                            <div class="card-nested">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/BAU2023/BTFGW/Indoor_Lighting_-_Low_Res_-_PCQC._SY116_CB596096789_.jpg" >
+                                <p>Lighting solutions</p>
+                            </div>
+                        </div>
+                        <button class="card-product-btn">See more</button>
+                    </div>
+                </div>
+            </main>
+           <!----------------todays deals----------->
+ <section class="today-deals-container">
+    <div class="today-deals-heading">
+        <h1>Todays deals</h1>
+        <p><a href="#">Se all deals</a></p>
+    </div>
+   <div class="today-deals-product-container">
+    <div class="today-deals-btn-container">
+
+        <button class="today-deals-btn">
+                <button class="today-deals-btn-left" id="today-deals-btn-1"></i></button>
+                <i class="fa-solid fa-chevron-left"></i></button>
+                <button class="today-deals-btn-right" id="today-deals-btn-2" >
+                    <i class="fa-solid fa-chevron-right"></i></button>
+        </button>
+    </div>
+    <div class="today-deals-product-list">
+        <div class="today-deals-product-item">
+            <img src="https://m.media-amazon.com/images/I/A1DtudTpwYL._CB577344841__AC_SY200_.jpg">
+            <div class="discount-container">
+               <a href="#">Upto 50% off</a>
+               <a href="#">Deals of the day</a>
+            </div>
+            <p>Men's Footwear: Bata</p>
+        </div>
+        <div class="today-deals-product-item">
+            <img src="https://m.media-amazon.com/images/I/A1DtudTpwYL._CB577344841__AC_SY200_.jpg" />
+            <div class="discount-container">
+               <a href="#">Upto 50% off</a>
+               <a href="#">Deals of the day</a>
+            </div>
+            <p>Men's Footwear: Bata</p>
+        </div>
+        <div class="today-deals-product-item">
+            <img src="https://m.media-amazon.com/images/I/A1DtudTpwYL._CB577344841__AC_SY200_.jpg" />
+            <div class="discount-container">
+               <a href="#">Upto 50% off</a>
+               <a href="#">Deals of the day</a>
+            </div>
+            <p>Men's Footwear: Bata</p>
+        </div>
+        <div class="today-deals-product-item">
+            <img src="https://m.media-amazon.com/images/I/A1DtudTpwYL._CB577344841__AC_SY200_.jpg" />
+            <div class="discount-container">
+               <a href="#">Upto 50% off</a>
+               <a href="#">Deals of the day</a>
+            </div>
+            <p>Men's Footwear: Bata</p>
+        </div>
+        <div class="today-deals-product-item">
+            <img src="https://m.media-amazon.com/images/I/A1DtudTpwYL._CB577344841__AC_SY200_.jpg" />
+            <div class="discount-container">
+               <a href="#">Upto 50% off</a>
+               <a href="#">Deals of the day</a>
+            </div>
+            <p>Men's Footwear: Bata</p>
+        </div>
+    </div>   
+    </div>
+   </div>
+     </div>
+ </section>
+   <script src="script.js" type="module"></script>
+</body>
+</html>
